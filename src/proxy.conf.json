@@ -1,0 +1,10 @@
+{
+    "/api": {
+      "target": "https://newsapi.org/v2/everything?q=bitcoin&apiKey=",
+      "secure": true,
+      "changeOrigin": true,
+      "pathRewrite": {
+        "^/api": ""
+      }
+    }
+  }
