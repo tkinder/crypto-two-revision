@@ -1,17 +1,47 @@
+<mat-card *ngFor="let newsItem of cryptoNews$ | async">
+  <mat-card-content>
+    <mat-list>
+      <mat-item><img mat-list-avatar width="40" height="40" [src]="newsItem.imageurl" [alt]="newsItem.title" /></mat-item>
+    </mat-list>
+    <mat-panel-title>
+      {{ newsItem.source_info.name }}
+    </mat-panel-title>
+    <mat-list>
+      {{ newsItem.title }}
+    </mat-list>
+    <mat-list>
+      <mat-card-actions class="action-buttons">
+        <a mat-button color="primary" href="{{ newsItem.guid }}" target="blank">
+          <mat-icon>description</mat-icon> Full Article
+        </a>
+      </mat-card-actions>
+    </mat-list>
+  </mat-card-content>
+</mat-card>
 
-  <mat-list>
+<!-- <mat-list>
+  <a *ngFor="let newsItem of cryptoNews$ | async" mat-list-item>
+    <img mat-list-avatar width="40" height="40" [src]="newsItem.imageurl" [alt]="newsItem.title" />
+      <p mat-line>{{ newsItem.title }}</p>
+    <p mat-line> <a href="{{ newsItem.guid }}" target="blank">{{ newsItem.source_info.name }} </a>  </p>
+  </a>
+</mat-list> -->
+
+<!-- <mat-list>
     <a *ngFor="let newsItem of cryptoNews$ | async"
     mat-list-item>
     <img mat-list-avatar width="60" height="60" [src]="newsItem.imageurl" [alt]="newsItem.title" />
-    <h4 mat-line>{{ newsItem.title }}</h4>
-    <p mat-line> {{ newsItem.source_info.name }} </p>
+    <p mat-line> {{ newsItem.source_info.name }}</p>
+    <pmat-line>{{ newsItem.title }}</pmat-line>
+
     <p mat-line>
       <mat-card-actions class="action-buttons">
         <a mat-button color="primary" href="{{ newsItem.guid }}" target="blank">
           <mat-icon>description</mat-icon> Full Article
         </a>
       </mat-card-actions>
-    </p>
+    </p> -->
+
 
 
 
