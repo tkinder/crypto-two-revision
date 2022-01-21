@@ -1,10 +1,15 @@
-<style>
-  h2 {
-    text-align: center;
-  }
+<head>
+  <style>
+    h2 {
+      text-align: center;
+    }
   </style>
-  <h2>Latest News</h2>
-  <br>
+</head>
+<body>
+  <h2>
+    Latest News
+  </h2>
+  </body>
 <mat-card *ngFor="let newsItem of cryptoNews$ | async">
   <mat-card-content>
     <mat-list>
