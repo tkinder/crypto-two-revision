@@ -15,6 +15,7 @@ import { NewsFeedComponent } from './news-feed/news-feed.component';
 import { NewsApiService } from './news-api.service';
 import { ApiNewsService } from './api-news.service';
 import { ArticlesBitcoinComponent } from './articles-bitcoin/articles-bitcoin.component';
+import { CryptosService } from './cryptos.service';
 
 @NgModule({
   declarations: [
@@ -32,8 +33,9 @@ import { ArticlesBitcoinComponent } from './articles-bitcoin/articles-bitcoin.co
     MaterialModule,
     BrowserAnimationsModule,
     RouterModule,
+
   ],
-  providers: [DataService, NewsApiService, ApiNewsService],
+  providers: [DataService, NewsApiService, ApiNewsService, CryptosService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
