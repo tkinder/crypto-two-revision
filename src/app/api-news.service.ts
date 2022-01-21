@@ -7,7 +7,7 @@ import { map } from 'rxjs/operators';
   providedIn: 'root',
 })
 export class ApiNewsService {
-  api_key = '35ca3239aa754462b51bb38b221afbbc';
+  api_key = '24bd80c24960d3cf31733291331a298ae53520fc2bfdb3910451fbf0cf021902';
 
   constructor(private http: HttpClient) {}
 
@@ -17,23 +17,28 @@ export class ApiNewsService {
         'https://newsapi.org/v2/top-headlines?category=technology&language=en&country=us&apiKey=' +
           this.api_key
       )
-      .pipe(map((data: any) => data.articles));
+      .pipe(map((data: any) => data.news));
   }
 
   getArticlesJavaScript(): Observable<any> {
     return this.http
       .get(
-        'https://newsapi.org/v2/everything?q=javascript&sortBy=latest&apiKey=' +
+        'https://min-api.cryptocompare.com/data/v2/news/?lang=EN&api_key=' +
           this.api_key
       )
-      .pipe(map((data: any) => data.articles));
+      .pipe(map((data: any) => data.news));
   }
   getArticlesBitcoin(): Observable<any> {
     return this.http
       .get(
-        'https://newsapi.org/v2/everything?q=bitcoin&sortBy=latest&apiKey=' +
+        'https://min-api.cryptocompare.com/data/v2/news/?lang=EN&api_key=' +
           this.api_key
+        // getArticlesBitcoin(): Observable<any> {
+        //   return this.http
+        //     .get(
+        //       'https://newsapi.org/v2/everything?q=bitcoin&sortBy=latest&apiKey=' +
+        //         this.api_key
       )
-      .pipe(map((data: any) => data.articles));
+      .pipe(map((data: any) => data.news));
   }
 }

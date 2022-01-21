@@ -3,7 +3,11 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: true,
+  title: 'CryptoCurrency News',
+  description: 'PWA displaying crypto currency news',
+  cryptoApiKey:
+    '24bd80c24960d3cf31733291331a298ae53520fc2bfdb3910451fbf0cf021902',
 };
 
 /*

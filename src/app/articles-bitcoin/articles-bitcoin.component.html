@@ -1,18 +1,68 @@
-<mat-card *ngFor="let article of BCarticles$ | async">
-  <mat-card-header>
-    <mat-card-title class="title">{{ article.title }}</mat-card-title>
-    <mat-card-subtitle>{{ article.source.name }}</mat-card-subtitle>
-  </mat-card-header>
-  <img mat-card-image class="img-article" src="{{ article.urlToImage }}" alt="" />
+
+  <mat-list>
+    <a *ngFor="let newsItem of cryptoNews$ | async"
+    mat-list-item>
+    <img mat-list-avatar width="60" height="60" [src]="newsItem.imageurl" [alt]="newsItem.title" />
+    <h4 mat-line>{{ newsItem.title }}</h4>
+    <p mat-line> {{ newsItem.source_info.name }} </p>
+    <p mat-line>
+      <mat-card-actions class="action-buttons">
+        <a mat-button color="primary" href="{{ newsItem.guid }}" target="blank">
+          <mat-icon>description</mat-icon> Full Article
+        </a>
+      </mat-card-actions>
+    </p>
+
+
+
+
+<!-- <mat-card>
+<img mat-card-image *ngFor="let newsItem of cryptoNews$ | async">
+<mat-card-content *ngIF="currentItem.title">
+  <p>
+    {{ currentItem.title }}
+  </p>
+</mat-card-content>
+<mat-card-actions *ngIF="currentItem.guid", class="action-buttons">
+  <a mat-button color="primary" href="{{ currentItem.guid }}">
+    <mat-icon>description</mat-icon> Full Article
+  </a>
+</mat-card-actions>
+</mat-card>
+ {{ currentItem.title }} -->
+
+<!-- <mat-card *ngFor="let newsItem of cryptoNews$ | async"> -->
+<!-- <mat-card *ngFor="let news of BCarticles$ | async"> -->
+  <!-- <mat-card-title-group>
+    <img mat-card-md-image *ngIf="currentItem.image.url" [src]="currentItem.imageurl" />
+    <mat-card-title>{{ currentItem.title }}</mat-card-title>
+    <mat-card-subtitle *ngIf="currentItem.source_info.name">
+      {{ currentItem.source_info.name }}. Published: {{ currentItem.published_on | date }}
+    </mat-card-subtitle>
+    </mat-card-title-group>
+    <mat-card-content>
+      <p *ngIf="currentItem.body">
+        {{ currentItem.body }}
+      </p>
+    </mat-card-content>
+    <mat-card-footer>
+      </mat-card-footer>
+    </mat-card>
+
+    <a href="{{ currentItem.guid }}">Click</a> -->
+    <!-- <mat-card-subtitle>{{ article.tags }}</mat-card-subtitle>
+
+  <img mat-card-image class="img-article" src="{{ article.imageurl }}" alt="" />
   <mat-card-content>
     <p>
       {{ article.description }}
     </p>
   </mat-card-content>
   <mat-card-actions class="action-buttons">
-    <a mat-button color="primary" href="{{ article.url }}">
+    <a mat-button color="primary" href="{{ article.guid }}">
       <mat-icon>description</mat-icon> Full Article
     </a>
   </mat-card-actions>
-</mat-card>
+</mat-card> -->
+
 <router-outlet></router-outlet>
