@@ -3,4 +3,32 @@ a[mat-list-item] {
   border-bottom-style: solid;
   border-bottom-width: 1px;
   border-bottom-color: #bdbdbd;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  box-sizing: border-box;
+  position: relative;
+  height: auto;
+  text-overflow: ellipsis;
 }
+b[mat-line]{
+  word-wrap: break-word;
+  text-overflow: ellipsis;
+  white-space: normal;
+  height: auto;
+}
+c[mat-list] {
+
+  text-overflow: ellipsis;
+  white-space: normal;
+  height: auto;
+}
+
+p.test {
+  word-wrap: break-word;
+}
+
+.mat-card {
+    margin: 5px;
+    padding: 5px;}
+

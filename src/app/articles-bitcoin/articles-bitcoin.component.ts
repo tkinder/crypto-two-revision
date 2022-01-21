@@ -36,6 +36,7 @@ export class ArticlesBitcoinComponent implements OnInit {
   goBack() {
     this.router.navigateByUrl('/');
   }
+  columnsToDisplay = ['source', 'name', 'title', 'link'];
 }
 // export class ArticlesBitcoinComponent implements OnInit {
 //   BCarticles$: Observable<any>;

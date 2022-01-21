@@ -23,8 +23,6 @@ export class AppComponent {
 
     }
 
-
-
   refreshData() {
     this._data.getPrices().subscribe((res) => {
       this.cryptos = res;
