@@ -5,7 +5,7 @@ import { DataService } from '../data.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { CryptosService } from '../cryptos.service';
 import { CryptoNews } from '../models/crypto-news';
-
+import { DynamicTitle } from '../dynamic-title/dynamic-title.component';
 
 @Component({
   selector: 'app-articles-bitcoin',
@@ -14,6 +14,7 @@ import { CryptoNews } from '../models/crypto-news';
 })
 export class ArticlesBitcoinComponent implements OnInit {
   public currentItem: any;
+  title = "Latest News"
 
   constructor(
     private _cryptoService: CryptosService,
@@ -36,7 +37,6 @@ export class ArticlesBitcoinComponent implements OnInit {
   goBack() {
     this.router.navigateByUrl('/');
   }
-  columnsToDisplay = ['source', 'name', 'title', 'link'];
 }
 // export class ArticlesBitcoinComponent implements OnInit {
 //   BCarticles$: Observable<any>;

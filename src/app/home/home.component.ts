@@ -1,6 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, NgModule } from '@angular/core';
 import { DataService } from '../data.service';
-
 
 
 @Component({
@@ -9,11 +8,13 @@ import { DataService } from '../data.service';
   styleUrls: ['./home.component.css'],
 })
 export class HomeComponent {
-  title = 'crypto-two';
+  title = 'Latest Prices';
   objectKeys = Object.keys;
   cryptos: any;
   interval: any;
   http: any;
+
+
 
   constructor(private _data: DataService) {}
 
@@ -22,6 +23,7 @@ export class HomeComponent {
     this.interval = setInterval(() => {
       this.refreshData();
     }, 10000);
+
   }
 
   refreshData() {
@@ -29,5 +31,8 @@ export class HomeComponent {
       this.cryptos = res;
       console.log(res);
     });
+  }
+  getKeys(obj){
+    return Object.keys(obj)
   }
 }

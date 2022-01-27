@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
+import { BrowserModule, Title } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -16,6 +16,8 @@ import { NewsApiService } from './news-api.service';
 import { ApiNewsService } from './api-news.service';
 import { ArticlesBitcoinComponent } from './articles-bitcoin/articles-bitcoin.component';
 import { CryptosService } from './cryptos.service';
+import { DynamicTitle } from './dynamic-title/dynamic-title.component';
+
 
 @NgModule({
   declarations: [
@@ -25,6 +27,7 @@ import { CryptosService } from './cryptos.service';
     NewsFeedComponent,
     ArticlesBitcoinComponent,
   ],
+
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -35,7 +38,14 @@ import { CryptosService } from './cryptos.service';
     RouterModule,
 
   ],
-  providers: [DataService, NewsApiService, ApiNewsService, CryptosService],
+  providers: [
+    DataService,
+    NewsApiService,
+    ApiNewsService,
+    CryptosService,
+    Title,
+    DynamicTitle,
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
