@@ -2,23 +2,25 @@
 <mat-card *ngFor="let newsItem of cryptoNews$ | async">
   <mat-card-content>
     <mat-list>
-      <mat-item><img mat-list-avatar width="40" height="40" [src]="newsItem.imageurl" [alt]="newsItem.title" /></mat-item>
+      <mat-item><img mat-list-avatar width="40" height="40" [src]="newsItem.imageurl" [alt]="newsItem.title" style="margin-left: 25px;"/></mat-item>
     </mat-list>
-    <mat-panel-title>
+    <mat-panel-title style="margin-left: 25px;">
       {{ newsItem.source_info.name }}
     </mat-panel-title>
-    <mat-list>
+    <mat-list style="margin-left: 25px;">
       {{ newsItem.title }}
     </mat-list>
     <mat-list>
       <mat-card-actions class="action-buttons">
-        <a mat-button color="primary" href="{{ newsItem.guid }}" target="blank">
-          <mat-icon>description</mat-icon> Full Article
+        <a mat-button color="primary" href="{{ newsItem.guid }}" target="blank" style="margin-left: 25px;">
+          <mat-icon>description</mat-icon>Full Article
         </a>
       </mat-card-actions>
     </mat-list>
   </mat-card-content>
 </mat-card>
+
+<router-outlet></router-outlet>
 
 <!-- <mat-list>
   <a *ngFor="let newsItem of cryptoNews$ | async" mat-list-item>
@@ -96,4 +98,4 @@
   </mat-card-actions>
 </mat-card> -->
 
-<router-outlet></router-outlet>
+

@@ -18,7 +18,7 @@ export interface CryptoNews {
   source: String;
   source_info: {
     img: String;
-    language: 'EN' | 'PT';
+    language: 'EN';
     name: String;
   };
   tags: String;

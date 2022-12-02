@@ -33,11 +33,6 @@ export class ApiNewsService {
       .get(
         'https://min-api.cryptocompare.com/data/v2/news/?lang=EN&api_key=' +
           this.api_key
-        // getArticlesBitcoin(): Observable<any> {
-        //   return this.http
-        //     .get(
-        //       'https://newsapi.org/v2/everything?q=bitcoin&sortBy=latest&apiKey=' +
-        //         this.api_key
       )
       .pipe(map((data: any) => data.news));
   }
